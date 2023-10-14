@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    body {
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+    }
+</style>
+<head>
+    <title>Информация о заметке</title>
+</head>
+<body>
+<h1>Информация о заметке</h1>
+<p>ID: <span th:text="${note.id}"></span></p>
+<p>Содержание: <span th:text="${note.text}"></span></p>
+<a href="/notes">Вернуться к списку</a>
+</body>
+</html>

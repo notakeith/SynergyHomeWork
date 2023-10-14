@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    body {
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+    }
+</style>
+<head>
+    <title>Добавление заметки</title>
+</head>
+<body>
+<h1>Добавление заметки</h1>
+<form method="post" th:object="${note}" th:action="@{/notes/add}">
+    <label for="text">Содержание:</label>
+    <input type="text" id="text" name="text" th:field="*{text}" required>
+    <br>
+    <input type="submit" value="Добавить">
+</form>
+<a href="/notes">Отменить</a>
+</body>
+</html>

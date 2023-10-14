@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    body {
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+    }
+    table {
+      margin: auto
+    }
+</style>
+<head>
+    <title>Список заметок</title>
+</head>
+<body>
+<h1>Список заметок</h1>
+<a href="/notes/add">Добавить</a>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Текст</th>
+        <th>Действие</th>
+    </tr>
+    <tr th:each="note : ${notes}">
+        <td th:text="${note.id}"></td>
+        <td th:text="${note.text}"></td>
+        <td>
+            <a th:href="@{/notes/{id}(id=${note.id})}">👁️</a> |
+            <a th:href="@{/notes/edit/{id}(id=${note.id})}">🛠️</a> |
+            <a th:href="@{/notes/delete/{id}(id=${note.id})}">❌</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
